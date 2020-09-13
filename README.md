@@ -1,2 +1,2 @@
 # SudokuSolver
-SudokuSolver implementation in python (shortly in javascript)
+SudokuSolver implementation in Python (shortly in Javascript)
