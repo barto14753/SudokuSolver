@@ -1,0 +1,82 @@
+body
+{
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%);
+}
+
+.message-box
+{
+    text-align: center;
+
+    font-size: 30px;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.message-box p
+{
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+button
+{
+    background-color: red;
+
+    font-size: 30px;
+    font-weight: 900;
+    color: white;
+    border-radius: 10px;
+}
+
+.game-box
+{
+    display: flex;
+    flex-flow: column;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-items: space-around;
+    padding: 10px;
+
+    
+}
+
+.row
+{
+    display: flex;
+    width: 700px;
+
+
+}
+
+.block
+{
+    width: 16px;
+    height: 16px;
+    border: solid white 2px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.snake
+{
+    width: 16px;
+    height: 16px;
+    background-color: rgb(255, 255, 255);
+    border: solid white 2px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.point
+{
+    width: 16px;
+    height: 16px;
+    background-color: rgb(32, 255, 43);
+    border: solid white 2px;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -3,18 +3,18 @@ import os
 import time
 
 # GLOBAL
-size = 20
+size = 9
 sudoku = [[[None, False] for j in range(size)] for i in range(size)]
 rows = [ [False for i in range(0, size+1)] for j in range(size)]
 columns = [ [False for i in range(0, size+1)] for j in range(size)]
-constNumbers = 5
-speed = 0
+constNumbers = 25
+speed = 0.01
 
 
 def deleteFromRowsAndColumns(number, i, j):
 	rows[i][number] = True
 	columns[j][number] = True
-
+        
 def setConstNumbers():
 	alreadyPut = 0
 	while alreadyPut < constNumbers:
@@ -37,7 +37,8 @@ def setConstNumbers():
 			alreadyPut = alreadyPut + 1
 
 def printSudoku():
-	os.system("cls")
+	#os.system("cls")
+	print()
 	for i in range(size):
 		row = ""
 		for j in range(size):
@@ -48,9 +49,6 @@ def printSudoku():
 		print(row)
 	time.sleep(speed)
 
-
-
-
 def isPossibleMove(number, i, j):
 	if sudoku[i][j][1] or number < 0 or number > size:
 		return False
@@ -60,14 +58,10 @@ def isPossibleMove(number, i, j):
 		else:
 			return True
 
-
-
 def addNumber(number, i, j):
 	deleteFromRowsAndColumns(number, i, j)
 	sudoku[i][j][0] = number
 	
-
-
 def deleteNumber(number, i, j):
 	rows[i][number] = False
 	columns[j][number] = False
@@ -91,7 +85,7 @@ def nextFreeAddress(i, j):
 
 def tryNumber(number, i, j):
 	addNumber(number, i, j)
-	#printSudoku()
+	printSudoku()
 
 	if i == size-1 and j == size-1:
 		return True
