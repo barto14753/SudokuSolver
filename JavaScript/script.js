@@ -5,6 +5,16 @@ let columns = Array(SIZE);
 let sudoku = Array(SIZE);
 let constSquares = Array(SIZE);
 
+
+const sleep = (milliseconds) => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds))
+  }
+
+const doSomething = async () => {
+    await sleep(2000)
+    //do stuff
+  }
+
 function getAddress(id)
 {
     let j = id % SIZE;
@@ -242,7 +252,7 @@ function removeMove(number, i, j)
 
 function tryThis(i, j)
 {
-    console.log("0");
+    doSomething();
     if (i == SIZE-1 && j == SIZE-1)
     {
         return true;
@@ -250,16 +260,17 @@ function tryThis(i, j)
     else
     {
         let tab = nextGoodAddress(i, j);
-        for (let num=0; num<SIZE+1; num++)
+        for (let num=1; num<SIZE+1; num++)
         {
             if (isPossibleMove(num, tab[0], tab[1]))
             {
                 addMove(num, tab[0], tab[1])
+                console.log("tryThis: (", tab[0], ",",tab[0],") - ", num, getId(tab[0],tab[1]));
                 if (tryThis(tab[0], tab[1]))
                 {
                     return true;
                 }
-                removeMove(tab[0], tab[1])
+                removeMove(num, tab[0], tab[1])
             }
         }
         return false;
@@ -270,14 +281,15 @@ function tryThis(i, j)
 function solve()
 {
     setConstsSquares();
-    let tab = nextGoodAddress(0, 0);
+    let tab = nextGoodAddress(0, -1);
+    console.log("GoodAddress:", tab);
     
-    for (let num=0; num<SIZE+1; num++)
+    for (let num=1; num<SIZE+1; num++)
     {
         if (isPossibleMove(num,tab[0], tab[1]))
         {
             addMove(num, tab[0], tab[1]);
-            if (tryThis(num, tab[0], tab[1]))
+            if (tryThis(tab[0], tab[1]))
             {
                 console.log("GOOD");
                 return true;
