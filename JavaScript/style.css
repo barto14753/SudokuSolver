@@ -1,0 +1,164 @@
+body
+{
+    background: rgb(141,0,255);
+    background: linear-gradient(90deg, rgba(141,0,255,1) 0%, rgba(0,95,255,1) 100%);
+    color: white;
+
+}
+
+.title-box
+{
+    text-align: center;
+
+    font-size: 72px;
+    font-weight: 900;
+    color: white;
+}
+
+.full-board
+{
+    display: flex;
+}
+
+.menu
+{
+    width: 25%;
+    height: 80vh;
+    margin-left: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: left;    
+
+}
+
+.menu h1
+{
+    font-size: 64px;
+    font-weight: 900;
+    color:white;
+
+}
+
+.sudoku
+{
+    width: 75%;
+    height: 90vh;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sudoku-box
+{
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.row
+{
+    display: flex;
+    
+}
+
+.square
+{
+    background-color: white;
+    border: solid black 1px;
+    border-radius: 5px;
+    width: 4.2vw;
+    height: 4.2vw;
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    font-weight: 900;
+    font-size: 40px;
+    text-align: right;
+
+
+}
+
+
+.square-const
+{
+    background-color: rgb(255, 66, 66);
+    border: solid black 1px;
+    border-radius: 5px;
+    width: 4.2vw;
+    height: 4.2vw;
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    font-weight: 900;
+    font-size: 40px;
+    text-align: right;
+
+
+}
+
+.square-move
+{
+    background-color: rgb(58, 255, 51);
+    border: solid black 1px;
+    border-radius: 5px;
+    width: 4.2vw;
+    height: 4.2vw;
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    font-weight: 900;
+    font-size: 40px;
+    text-align: right;
+
+
+}
+
+select {
+    text-align: center;
+    text-align-last: center;
+    /* webkit*/
+  }
+  option {
+    text-align: left;
+    /* reset to left*/
+  }
+
+  .reset-button
+  {
+    margin-left: 0;
+    margin-top: 10vh;
+    
+    background-color: red;
+    width: 10vw;
+    height: 5vh;
+
+    color: white;
+    font-size: 32px;
+    font-weight: 900;
+    text-align: center;
+    border-radius: 30px;
+  }
+
+
+  .solve-button
+  {
+    margin-left: 0;
+    margin-top: 10vh;
+    
+    background-color: rgb(41, 255, 4);
+    width: 10vw;
+    height: 5vh;
+
+    color: white;
+    font-size: 32px;
+    font-weight: 900;
+    text-align: center;
+    border-radius: 30px;
+  }

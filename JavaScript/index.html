@@ -2,12 +2,27 @@
 
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>SudokuSolver</title>
-  <link rel="stylesheet" href="style.css">
+	<meta charset="utf-8">
+  	<title>SudokuSolver</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" href="sudoku.png">
 </head>
 
 <body>
-    <script src="script.js"></script>
+	<div class="title-box">SudokuSolver</div>
+	<div class="full-board">
+		<div class="sudoku">
+			<div class="sudoku-box" id="sudoku-box"></div>
+		</div>
+		<div class="menu">
+			<h1>MENU</h1>
+			<button class="solve-button" onclick="solve();">Solve</button>
+			<button class="reset-button" onclick="reset();">Reset</button>
+		</div>
+	</div>
+	
+
+
+	<script src="script.js"></script>
 </body>
 </html>
