@@ -179,25 +179,32 @@ function resetConstSquares()
 
 function reset()
 {
+    document.getElementById("message-box").innerHTML = "";
     resetConstSquares();
-
     for (let i=0; i<SIZE; i++)
     {
         for (let j=0; j<SIZE+1; j++)
         {
+            let select = document.getElementById(getId(i, j));
+
+        
+            if (sudoku[i][j] != 0)
+            {
+                select.classList.remove("square-move");
+                select.classList.add("square");
+            }
+
             rows[i][j] = false;
             columns[i][j] = false;
             sudoku[i][j] = 0;
 
-            let select = document.getElementById(getId(i, j));
-            console.log(select);
             select.selectedIndex = 0;
 
-            for (let k=0; k<9; k++)
+            for (let k=0; k<SIZE; k++)
             {
                 select.options[k].disabled = false;
             }
-
+            
         }
     }
 }
@@ -277,6 +284,15 @@ function tryThis(i, j)
     }
 }
 
+function goodNews()
+{
+    document.getElementById("message-box").innerHTML = "Sucussfully solved";
+}
+
+function badNews()
+{
+    document.getElementById("message-box").innerHTML = "Impossible to solve";
+}
 
 function solve()
 {
@@ -291,14 +307,16 @@ function solve()
             addMove(num, tab[0], tab[1]);
             if (tryThis(tab[0], tab[1]))
             {
-                console.log("GOOD");
+                goodNews();
+                console.log("Here");
                 return true;
             }
             removeMove(num, tab[0], tab[1]);
         }
     }
-    console.log("BAD");
+    badNews();
     return false;
+
 }
 
 
